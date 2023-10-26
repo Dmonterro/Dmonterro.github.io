@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suma y Promedio de Empleados</title>
+</head>
+<body bgcolor="#FF9933">
+    <h1>Calcular Salario de Empleados</h1>
+    <label for="numEmpleados">Ingrese la cantidad de empleados:</label>
+    <input type="number" id="numEmpleados" min="1">
+    <button onclick="obtenerSalarios()">Calcular</button>
+
+    <div id="salarios" style="display: none;">
+        <h2>Ingrese los salarios de los empleados:</h2>
+        <form id="salarioForm">
+        </form>
+        <button onclick="calcularSumaYPromedio()">Calcular</button>
+    </div>
+
+    <div id="resultados" style="display: none;">
+        <h2>Resultados:</h2>
+        <p>Suma de salarios: Q <span id="sumaSalarios"></span></p>
+        <p>Promedio de salarios: Q <span id="promedioSalarios"></span></p>
+    </div>
+
+    <script>
+        function obtenerSalarios() {
+            const numEmpleados = parseInt(document.getElementById("numEmpleados").value);
+            const salarioForm = document.getElementById("salarioForm");
+            salarioForm.innerHTML = "";
+
+            for (let i = 0; i < numEmpleados; i++) {
+                salarioForm.innerHTML += `
+                    <label for="salarioEmpleado${i}">Salario del Empleado ${i + 1}:</label>
+                    <input type="number" id="salarioEmpleado${i}" min="0"><br>
+                `;
+            }
+
+            document.getElementById("salarios").style.display = "block";
+        }
+
+        function calcularSumaYPromedio() {
+            const numEmpleados = parseInt(document.getElementById("numEmpleados").value);
+            let sumaSalarios = 0;
+
+            for (let i = 0; i < numEmpleados; i++) {
+                const salario = parseFloat(document.getElementById(`salarioEmpleado${i}`).value);
+                sumaSalarios += salario;
+            }
+
+            const promedioSalarios = sumaSalarios / numEmpleados;
+
+            document.getElementById("sumaSalarios").textContent = sumaSalarios.toFixed(2);
+            document.getElementById("promedioSalarios").textContent = promedioSalarios.toFixed(2);
+            document.getElementById("resultados").style.display = "block";
+        }
+    </script>
+</body>
+<body>
+
+    
+    <button id="boton1">Opción 1: Calculo de salario</button>
+    <button id="boton2">Opción 2: Boleto de ornatos </button>
+    <button id="boton3">Opción 3: Portada</button>
+    <button id="boton4">Opción 4: Horas Extras</button>
+
+    
+
+    <script>
+        function redirigirPagina1() {
+            window.location.href = 'parte1.html';
+        }
+
+        function redirigirPagina2() {
+            window.location.href = 'parte2.html';
+        }
+
+        function redirigirPagina3() {
+            window.location.href = 'index.html';
+        }
+
+        function redirigirPagina4() {
+            window.location.href = 'parte4.html';
+        }
+
+        document.getElementById('boton1').addEventListener('click', redirigirPagina1);
+        document.getElementById('boton2').addEventListener('click', redirigirPagina2);
+        document.getElementById('boton3').addEventListener('click', redirigirPagina3);
+        document.getElementById('boton4').addEventListener('click', redirigirPagina4);
+    </script>
+</body>
+
+</html>

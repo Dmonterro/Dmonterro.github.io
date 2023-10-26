@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horas Extras Trabajadas</title>
+</head>
+<body bgcolor="#FFCCCC">
+    <h1>Horas Extras Trabajadas</h1>
+
+    <label for="numEmpleados">Ingrese la cantidad de empleados:</label>
+    <input type="number" id="numEmpleados" min="1">
+    <button onclick="obtenerHorasTrabajadas()">Calcular</button>
+
+    <div id="horasTrabajadas" style="display: none;">
+        <h2>Ingrese las horas extras trabajadas por los empleados:</h2>
+        <form id="horasForm">
+        </form>
+        <button onclick="calcularSumaYPromedio()">Calcular</button>
+    </div>
+
+    <div id="resultados" style="display: none;">
+        <h2>Resultados:</h2>
+        <p>Suma de horas extras: <span id="sumaHoras"></span> Hrs </p>
+ 
+    </div>
+
+    <script>
+        function obtenerHorasTrabajadas() {
+            const numEmpleados = parseInt(document.getElementById("numEmpleados").value);
+            const horasForm = document.getElementById("horasForm");
+            horasForm.innerHTML = "";
+
+            for (let i = 0; i < numEmpleados; i++) {
+                horasForm.innerHTML += `
+                    <label for="horasEmpleado${i}">Horas trabajadas por el Empleado ${i + 1}:</label>
+                    <input type="number" id="horasEmpleado${i}" min="0"><br>
+                `;
+            }
+
+            document.getElementById("horasTrabajadas").style.display = "block";
+        }
+
+        function calcularSumaYPromedio() {
+            const numEmpleados = parseInt(document.getElementById("numEmpleados").value);
+            let sumaHoras = 0;
+
+            for (let i = 0; i < numEmpleados; i++) {
+                const horas = parseFloat(document.getElementById(`horasEmpleado${i}`).value);
+                sumaHoras += horas;
+            }
+
+
+
+            document.getElementById("sumaHoras").textContent = sumaHoras.toFixed(2);
+          
+            document.getElementById("resultados").style.display = "block";
+        }
+    </script>
+</body>
+<body>
+
+    
+    <button id="boton1">Opción 1: Calculo de salario</button>
+    <button id="boton2">Opción 2: Boleto de ornato</button>
+    <button id="boton3">Opción 3: Suma y Promedio</button>
+    <button id="boton4">Opción 4: Portada</button>
+
+    
+
+    <script>
+        function redirigirPagina1() {
+            window.location.href = 'parte1.html';
+        }
+
+        function redirigirPagina2() {
+            window.location.href = 'parte2.html';
+        }
+
+        function redirigirPagina3() {
+            window.location.href = 'parte3.html';
+        }
+
+        function redirigirPagina4() {
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('boton1').addEventListener('click', redirigirPagina1);
+        document.getElementById('boton2').addEventListener('click', redirigirPagina2);
+        document.getElementById('boton3').addEventListener('click', redirigirPagina3);
+        document.getElementById('boton4').addEventListener('click', redirigirPagina4);
+    </script>
+</body>
+
+</html>

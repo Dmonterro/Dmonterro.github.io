@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boleto de ornato</title>
+</head>
+<body bgcolor="#CCFF99">
+    <h1>Boleto de ornato</h1>
+    <form id="salarioForm">
+        <label for="salario">Ingreso Mensual: </label>
+        <input type="number" id="salario" step="0.01" required>
+        <br><br>
+        <input type="button" value="Calcular" onclick="calcularSalario()">
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSalario() {
+            const salario = parseFloat(document.getElementById("salario").value);
+
+            if (salario >= 500 && salario <= 1000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado está en el rango de Q500 a Q1000. El arbitrio es del 10% y la multa es del 20%.";
+            }
+
+            else if (salario => 1001 && salario <= 3000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado está en el rango de Q1001 a Q3000. El arbitrio es del 10% y la multa es del 20%.";
+            }
+
+            else if (salario => 3001 && salario <= 6000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado está en el rango de Q3001 a Q6000. El arbitrio es del 50% y la multa es del 100%.";
+            }
+
+            else if (salario => 6001 && salario <= 9000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado está en el rango de Q6001 a Q9000. El arbitrio es del 75% y la multa es del 150%.";
+            }
+
+            else if (salario => 9001 && salario <= 12000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado está en el rango de Q9001 a Q12000. El arbitrio es del 100% y la multa es del 200%.";
+            }
+
+            else if (salario > 12000) {
+                document.getElementById("resultado").innerHTML = "El salario ingresado es mayor de Q12000. El arbitrio es del 150% y la multa es del 300%.";
+            } else {
+                document.getElementById("resultado").innerHTML = "El salario ingresado no está en ninguno de los rangos especificados. No se aplica arbitrio ni multa.";
+            }
+        }
+    </script>
+</body>
+<body>
+
+    
+    <button id="boton1">Opción 1: Calculo de salario</button>
+    <button id="boton2">Opción 2: Portada</button>
+    <button id="boton3">Opción 3: Suma y Promedio</button>
+    <button id="boton4">Opción 4: Horas Extras</button>
+
+    
+
+    <script>
+        function redirigirPagina1() {
+            window.location.href = 'parte1.html';
+        }
+
+        function redirigirPagina2() {
+            window.location.href = 'index.html';
+        }
+
+        function redirigirPagina3() {
+            window.location.href = 'parte3.html';
+        }
+
+        function redirigirPagina4() {
+            window.location.href = 'parte4.html';
+        }
+
+        document.getElementById('boton1').addEventListener('click', redirigirPagina1);
+        document.getElementById('boton2').addEventListener('click', redirigirPagina2);
+        document.getElementById('boton3').addEventListener('click', redirigirPagina3);
+        document.getElementById('boton4').addEventListener('click', redirigirPagina4);
+    </script>
+</body>
+</html>

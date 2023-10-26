@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programa Administrativo - Diego Guevara</title>
+    <style>
+        body {
+            background-color: #FF0099;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            margin: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FFD700;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bienvenido al Programa Administrativo</h1>
+	<h3>Programador: Diego Monterroso 0901-22-1369</h3>
+    <button id="boton1">Opción 1: Calculo de Salario</button>
+    <button id="boton2">Opción 2: Boleto de ornato</button>
+    <button id="boton3">Opción 3: Suma y Promedio</button>
+    <button id="boton4">Opción 4: Horas Extras</button>
+
+    
+
+    <script>
+        function redirigirPagina1() {
+            window.location.href = 'parte1.html';
+        }
+
+        function redirigirPagina2() {
+            window.location.href = 'parte2.html';
+        }
+
+        function redirigirPagina3() {
+            window.location.href = 'parte3.html';
+        }
+
+        function redirigirPagina4() {
+            window.location.href = 'parte4.html';
+        }
+
+        document.getElementById('boton1').addEventListener('click', redirigirPagina1);
+        document.getElementById('boton2').addEventListener('click', redirigirPagina2);
+        document.getElementById('boton3').addEventListener('click', redirigirPagina3);
+        document.getElementById('boton4').addEventListener('click', redirigirPagina4);
+    </script>
+</body>
+
+</html>

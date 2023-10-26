@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tarea 5</title>
+</head>
+<body bgcolor="#CCFF33">
+
+    <h1>Calculadora de Salarios</h1>
+
+    <form id="salaryForm">
+        <h2>Información Personal</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+
+        <h2>Salario</h2>
+        <label for="salarioMensual">Salario Mensual:</label>
+        <input type="number" id="salarioMensual" name="salarioMensual" required><br>
+
+        <button type="button" onclick="calcularSalario()">Calcular Salario</button>
+
+        <h2>Resultados</h2>
+        <p>IGSS: <span id="igss"></span></p>
+        <p>Bonificación: <span id="bonificacion"></span></p>
+        <p>Salario a Recibir: <span id="salarioRecibir"></span></p>
+    </form>
+
+
+    <script>
+        function calcularSalario() {
+            const salarioMensual = parseFloat(document.getElementById("salarioMensual").value);
+            
+            // Calcula el IGSS (por ejemplo, el 5% del salario)
+            const igss = salarioMensual * 0.05;
+
+            // Calcula la bonificación (puedes modificar el cálculo según tus necesidades)
+            const bonificacion = 100;
+
+            // Calcula el salario a recibir
+            const salarioRecibir = salarioMensual - igss + bonificacion;
+
+
+
+            document.getElementById("igss").textContent = igss.toFixed(2);
+            document.getElementById("bonificacion").textContent = bonificacion.toFixed(2);
+            document.getElementById("salarioRecibir").textContent = salarioRecibir.toFixed(2);
+        }
+
+    </script>
+
+
+
+</body>
+<body>
+
+    
+    <button id="boton1">Opción 1: Portada</button>
+    <button id="boton2">Opción 2: Boleto de ornato</button>
+    <button id="boton3">Opción 3: Suma y Promedio</button>
+    <button id="boton4">Opción 4: Horas Extras</button>
+
+    
+
+    <script>
+        function redirigirPagina1() {
+            window.location.href = 'index.html';
+        }
+
+        function redirigirPagina2() {
+            window.location.href = 'parte2.html';
+        }
+
+        function redirigirPagina3() {
+            window.location.href = 'parte3.html';
+        }
+
+        function redirigirPagina4() {
+            window.location.href = 'parte4.html';
+        }
+
+        document.getElementById('boton1').addEventListener('click', redirigirPagina1);
+        document.getElementById('boton2').addEventListener('click', redirigirPagina2);
+        document.getElementById('boton3').addEventListener('click', redirigirPagina3);
+        document.getElementById('boton4').addEventListener('click', redirigirPagina4);
+    </script>
+</body>
+
+</html>
